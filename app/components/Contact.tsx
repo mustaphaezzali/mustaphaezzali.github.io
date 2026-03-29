@@ -10,7 +10,7 @@ export default function Contact() {
                     <p className={styles.description}>
                         Are you looking for a skilled data scientist to deliver high-performance and actionable insights from your data,
                         enabling data-driven decisions for your organization? Or looking for any kind of consultation? Or want to ask questions?
-                        Or have some advice for me or just want to say "Hi 👋"? In any case feel free to let me know. I will do my best to
+                        Or have some advice for me or just want to say &quot;Hi 👋&quot;? In any case feel free to let me know. I will do my best to
                         respond back. 😊 The quickest way to reach out to me is via email.
                     </p>
 
