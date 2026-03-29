@@ -11,8 +11,6 @@ export default function Hero() {
                     </h1>
                     <p className={`${styles.subtitle} fade-in`}>
                         {SITE_CONFIG.author.title}
-                        <br />
-                        Available for an end of studies internship (PFE)
                     </p>
                     <div className={`${styles.cta} fade-in`}>
                         <a href="#contact" className="btn btn-primary">

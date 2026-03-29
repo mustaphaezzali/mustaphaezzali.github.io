@@ -1,18 +1,17 @@
 // Site metadata and configuration
 export const SITE_CONFIG = {
     name: 'Mustapha Ezzali',
-    title: 'Mustapha Ezzali | AI Engineering Student',
-    description: 'AI & data science engineering student available for an end of studies internship (PFE)',
+    title: 'Mustapha Ezzali | AI Engineer',
+    description: 'AI & Data Science Engineer with around 2 years of experience',
     url: 'https://mustaphaezzali.github.io',
     author: {
         name: 'Mustapha Ezzali',
-        email: 'mustapha_ezzali@um5.ac.ma',
-        title: 'AI & Data Science Engineering Student',
+        email: 'mustaphaezzali2001@gmail.com',
+        title: 'AI & Data Science Engineer',
         school: 'ENSIAS (National School of Computer Science and System Analysis)',
         location: 'Rabat, Morocco',
-        bio: "Hey! My name is Mustapha Ezzali and I'm an AI engineering student with a passion for natural language processing, computer vision and reinforcement learning. I'm currently a third year student at ENSIAS (National School of computer science and system analysis) in Rabat, Morocco.",
+        bio: "Hey! My name is Mustapha Ezzali and I'm an AI & Data Science Engineer with around 2 years of experience. I have a passion for natural language processing, computer vision and reinforcement learning. I graduated from ENSIAS (National School of computer science and system analysis) in Rabat, Morocco.",
         resumeUrl: 'https://drive.google.com/file/d/1-cDVV903m4Cgy6Oeu-STyKeJnl_Ngbh3/view?usp=sharing',
-        image: '/images/pphoto1.png',
     },
     social: {
         github: 'https://github.com/mustaphaezzali/',
@@ -24,6 +23,36 @@ export const SITE_CONFIG = {
 export const EXPERIENCES = [
     {
         id: 1,
+        title: 'AI Engineer',
+        company: 'Confidential Company',
+        location: 'Remote',
+        startDate: 'September 2025',
+        endDate: 'Present',
+        description: 'Focusing on noisy data training, precisely on ASR (Automatic Speech Recognition) models.',
+        technologies: ['Python', 'ASR', 'Deep Learning', 'Noisy Data Training'],
+    },
+    {
+        id: 2,
+        title: 'Data Scientist',
+        company: 'Nucleon Security',
+        location: 'Morocco',
+        startDate: 'September 2024',
+        endDate: 'August 2025',
+        description: 'Continued work on malware detection with AI, focusing on improving MLOps practices and building pipelines for model training automation.',
+        technologies: ['Python', 'AI/ML', 'MLOps', 'Data Engineering', 'Malware Detection'],
+    },
+    {
+        id: 3,
+        title: 'Malware Detection Intern',
+        company: 'Nucleon Security',
+        location: 'Morocco',
+        startDate: 'February 2024',
+        endDate: 'August 2024',
+        description: 'Internship focused on malware detection using Machine Learning techniques.',
+        technologies: ['Python', 'Machine Learning', 'Malware Analysis', 'Cybersecurity'],
+    },
+    {
+        id: 4,
         title: 'Research Engineer Intern',
         company: 'Research Lab',
         location: 'Morocco',
@@ -31,16 +60,6 @@ export const EXPERIENCES = [
         endDate: 'August 31, 2023',
         description: 'Finetuning state-of-the-art AI models for speech recognition to help elderly people.',
         technologies: ['Python', 'PyTorch', 'Speech Recognition', 'AI/ML'],
-    },
-    {
-        id: 2,
-        title: 'Chatbot Developer Intern',
-        company: 'Architeo',
-        location: 'Morocco',
-        startDate: 'August 01, 2022',
-        endDate: 'September 15, 2022',
-        description: 'Automate the recruitment process using chatbots. The chatbot is responsible for collecting information from both the recruiter and the candidate, and then transmitting this data to the company (Architeo) for the final decision.',
-        technologies: ['Python', 'NLP', 'Chatbot Development', 'Automation'],
     },
 ]
 

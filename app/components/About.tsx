@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { SITE_CONFIG, SKILLS } from '@/lib/constants'
 import styles from './About.module.css'
 
@@ -9,16 +8,6 @@ export default function About() {
                 <h2 className={styles.title}>About Me</h2>
 
                 <div className={styles.content}>
-                    <div className={styles.imageContainer}>
-                        <Image
-                            src={SITE_CONFIG.author.image}
-                            alt={SITE_CONFIG.author.name}
-                            width={400}
-                            height={400}
-                            className={styles.image}
-                        />
-                    </div>
-
                     <div className={styles.text}>
                         <p>{SITE_CONFIG.author.bio}</p>
 

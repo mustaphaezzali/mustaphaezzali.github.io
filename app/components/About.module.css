@@ -5,29 +5,14 @@
 
 .content {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr;
     gap: var(--spacing-lg);
     align-items: start;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.imageContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-.image {
-    width: 100%;
-    height: auto;
-    max-width: 400px;
-    border-radius: 13%;
-    box-shadow: var(--shadow-xl);
-    transition: transform var(--transition-base);
-}
-
-.image:hover {
-    transform: scale(1.05);
-}
 
 .text {
     display: flex;
@@ -87,11 +72,6 @@
 
 @media (max-width: 968px) {
     .content {
-        grid-template-columns: 1fr;
         gap: var(--spacing-md);
-    }
-
-    .imageContainer {
-        order: -1;
     }
 }
