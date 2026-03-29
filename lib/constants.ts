@@ -12,6 +12,7 @@ export const SITE_CONFIG = {
         location: 'Rabat, Morocco',
         bio: "Hey! My name is Mustapha Ezzali and I'm an AI & Data Science Engineer with around 2 years of experience. I have a passion for natural language processing, computer vision and reinforcement learning. I graduated from ENSIAS (National School of computer science and system analysis) in Rabat, Morocco.",
         resumeUrl: 'https://drive.google.com/file/d/1-cDVV903m4Cgy6Oeu-STyKeJnl_Ngbh3/view?usp=sharing',
+        image: '/images/pphoto1.png',
     },
     social: {
         github: 'https://github.com/mustaphaezzali/',

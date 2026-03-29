@@ -2,13 +2,15 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { NAV_LINKS } from '@/lib/constants'
+import Image from 'next/image'
+import { NAV_LINKS, SITE_CONFIG } from '@/lib/constants'
 import ThemeToggle from './ThemeToggle'
 import styles from './Header.module.css'
 
 export default function Header() {
     const [scrolled, setScrolled] = useState(false)
     const [activeSection, setActiveSection] = useState('')
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
     useEffect(() => {
         const handleScroll = () => {
@@ -37,10 +39,19 @@ export default function Header() {
             <div className="container">
                 <div className={styles.headerContent}>
                     <Link href="/" className={styles.logo}>
-                        ME
+                        <div className={styles.logoImage}>
+                            <Image
+                                src={SITE_CONFIG.author.image}
+                                alt={SITE_CONFIG.author.name}
+                                width={32}
+                                height={32}
+                                className={styles.image}
+                            />
+                        </div>
+                        stoof
                     </Link>
 
-                    <nav className={styles.nav}>
+                    <nav className={`${styles.nav} ${isMobileMenuOpen ? styles.mobileOpen : ''}`}>
                         <ul className={styles.navList}>
                             {NAV_LINKS.map((link) => (
                                 <li key={link.href}>
@@ -48,6 +59,7 @@ export default function Header() {
                                         href={link.href}
                                         className={`${styles.navLink} ${activeSection === link.href.substring(1) ? styles.active : ''
                                             }`}
+                                        onClick={() => setIsMobileMenuOpen(false)}
                                     >
                                         {link.label}
                                     </a>
@@ -56,7 +68,24 @@ export default function Header() {
                         </ul>
                     </nav>
 
-                    <ThemeToggle />
+                    <div className={styles.actions}>
+                        <ThemeToggle />
+                        <button 
+                            className={styles.mobileMenuBtn} 
+                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                            aria-label="Toggle menu"
+                        >
+                            {isMobileMenuOpen ? (
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                    <path d="M18 6L6 18M6 6l12 12" />
+                                </svg>
+                            ) : (
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                    <path d="M4 6h16M4 12h16M4 18h16" />
+                                </svg>
+                            )}
+                        </button>
+                    </div>
                 </div>
             </div>
         </header>

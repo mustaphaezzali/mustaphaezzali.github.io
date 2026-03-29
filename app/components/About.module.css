@@ -1,5 +1,5 @@
 .title {
-    text-align: center;
+    text-align: left;
     margin-bottom: var(--spacing-lg);
 }
 
@@ -8,11 +8,9 @@
     grid-template-columns: 1fr;
     gap: var(--spacing-lg);
     align-items: start;
-    max-width: 800px;
+    max-width: 850px;
     margin: 0 auto;
 }
-
-
 
 .text {
     display: flex;
@@ -21,44 +19,78 @@
 }
 
 .text p {
-    font-size: var(--text-lg);
-    line-height: 1.8;
+    font-size: 1.25rem;
+    line-height: 1.7;
+    color: var(--color-text);
 }
 
 .skills {
-    margin-top: var(--spacing-md);
+    margin-top: var(--spacing-xl);
 }
 
 .skills h3 {
-    margin-bottom: var(--spacing-sm);
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    margin-bottom: var(--spacing-lg);
     color: var(--color-text);
 }
 
 .skillsGrid {
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: var(--spacing-md);
 }
 
-.skillCategory h4 {
-    font-size: var(--text-base);
-    color: var(--color-primary);
-    margin-bottom: var(--spacing-xs);
-    font-weight: 600;
+.skillCard {
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-primary);
+    border-radius: var(--radius-sm);
+    padding: 1.25rem 1.5rem;
+    transition: all var(--transition-base);
+}
+
+.skillCard:hover {
+    box-shadow: var(--shadow-md);
+    border-left-color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 1rem;
+}
+
+.cardIcon {
+    font-size: 1.35rem;
+    line-height: 1;
+}
+
+.cardHeader h4 {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-secondary);
+    font-weight: 700;
+    margin: 0;
 }
 
 .skillTags {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--spacing-xs);
+    gap: 0.5rem;
 }
 
 .tag {
     display: inline-block;
-    padding: 0.5rem 1rem;
+    padding: 0.3rem 0.7rem;
     background: var(--color-surface);
     color: var(--color-text);
-    border-radius: var(--radius-full);
-    font-size: var(--text-sm);
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem;
     font-weight: 500;
     transition: all var(--transition-fast);
     border: 1px solid var(--color-border);
@@ -67,11 +99,16 @@
 .tag:hover {
     background: var(--color-primary);
     color: white;
-    transform: translateY(-2px);
+    border-color: var(--color-primary);
+    transform: translateY(-1px);
 }
 
 @media (max-width: 968px) {
     .content {
         gap: var(--spacing-md);
+    }
+
+    .skillsGrid {
+        grid-template-columns: 1fr;
     }
 }

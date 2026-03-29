@@ -1,39 +1,62 @@
 .header {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: var(--z-sticky);
-    background: var(--color-background);
-    transition: all var(--transition-base);
-    border-bottom: 1px solid transparent;
+    top: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: 90%;
+    max-width: 1000px;
+    background: transparent;
+    transition: all var(--transition-slow);
+    border-radius: var(--radius-full);
 }
 
 .scrolled {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom-color: var(--color-border);
-    box-shadow: var(--shadow-sm);
+    background: rgba(254, 250, 246, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-md);
+    padding: 0.5rem 1rem;
 }
 
 [data-theme="dark"] .scrolled {
-    background: rgba(10, 10, 10, 0.8);
+    background: rgba(17, 17, 17, 0.7);
 }
 
 .headerContent {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.5rem 0;
+    padding: 0.75rem 1.5rem;
 }
 
 .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: var(--font-serif);
     font-size: var(--text-2xl);
-    font-weight: 700;
+    font-weight: 500;
     color: var(--color-text);
     text-decoration: none;
     transition: color var(--transition-fast);
+}
+
+.logoImage {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1.5px solid #bde6fb;
+    box-shadow: 0 0 10px rgba(189, 230, 251, 0.3);
+}
+
+.logoImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 25%;
 }
 
 .logo:hover {
@@ -41,14 +64,13 @@
 }
 
 .nav {
-    flex: 1;
     display: flex;
     justify-content: center;
 }
 
 .navList {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -59,34 +81,41 @@
     text-decoration: none;
     font-weight: 500;
     font-size: var(--text-base);
-    transition: color var(--transition-fast);
-    position: relative;
-}
-
-.navLink::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--color-primary);
-    transition: width var(--transition-base);
+    transition: all var(--transition-fast);
 }
 
 .navLink:hover,
 .navLink.active {
+    color: var(--color-text);
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.mobileMenuBtn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--color-text);
+    cursor: pointer;
+    padding: 0.25rem;
+    transition: color var(--transition-fast);
+}
+
+.mobileMenuBtn:hover {
     color: var(--color-primary);
 }
 
-.navLink:hover::after,
-.navLink.active::after {
-    width: 100%;
-}
-
 @media (max-width: 768px) {
+    .header {
+        top: 1rem;
+    }
+    
     .navList {
-        gap: 1rem;
+        gap: 1.5rem;
     }
 
     .navLink {
@@ -95,7 +124,43 @@
 }
 
 @media (max-width: 640px) {
+    .mobileMenuBtn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--color-background);
+        padding: 1rem;
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-md);
         display: none;
+        flex-direction: column;
+        border: 1px solid var(--color-border);
+        margin-top: 0.5rem;
+    }
+
+    .nav.mobileOpen {
+        display: flex;
+    }
+
+    .scrolled .nav {
+        background: rgba(254, 250, 246, 0.95);
+        backdrop-filter: blur(16px);
+    }
+    
+    [data-theme="dark"] .scrolled .nav {
+        background: rgba(17, 17, 17, 0.95);
+    }
+
+    .navList {
+        flex-direction: column;
+        gap: 1.25rem;
+        align-items: center;
     }
 }

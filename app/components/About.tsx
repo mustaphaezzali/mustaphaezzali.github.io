@@ -14,18 +14,31 @@ export default function About() {
                         <div className={styles.skills}>
                             <h3>Skills & Technologies</h3>
                             <div className={styles.skillsGrid}>
-                                {Object.entries(SKILLS).map(([category, techs]) => (
-                                    <div key={category} className={styles.skillCategory}>
-                                        <h4>{category}</h4>
-                                        <div className={styles.skillTags}>
-                                            {techs.map((tech) => (
-                                                <span key={tech} className={styles.tag}>
-                                                    {tech}
-                                                </span>
-                                            ))}
+                                {Object.entries(SKILLS).map(([category, techs]) => {
+                                    const icons: Record<string, string> = {
+                                        'Natural Language Processing': '🧠',
+                                        'Machine Learning': '⚡',
+                                        'Computer Vision': '👁️',
+                                        'Programming Languages': '💻',
+                                        'Web Development': '🌐',
+                                        'Tools & Technologies': '🛠️',
+                                    }
+                                    return (
+                                        <div key={category} className={styles.skillCard}>
+                                            <div className={styles.cardHeader}>
+                                                <span className={styles.cardIcon}>{icons[category] || '📦'}</span>
+                                                <h4>{category}</h4>
+                                            </div>
+                                            <div className={styles.skillTags}>
+                                                {techs.map((tech) => (
+                                                    <span key={tech} className={styles.tag}>
+                                                        {tech}
+                                                    </span>
+                                                ))}
+                                            </div>
                                         </div>
-                                    </div>
-                                ))}
+                                    )
+                                })}
                             </div>
                         </div>
 

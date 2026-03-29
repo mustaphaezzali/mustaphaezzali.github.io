@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { SITE_CONFIG } from '@/lib/constants'
 import styles from './Hero.module.css'
 
@@ -6,6 +7,16 @@ export default function Hero() {
         <section className={styles.hero}>
             <div className="container">
                 <div className={styles.content}>
+                    <div className={`${styles.imageWrapper} fade-in`}>
+                        <Image
+                            src={SITE_CONFIG.author.image}
+                            alt={SITE_CONFIG.author.name}
+                            width={160}
+                            height={160}
+                            className={styles.profileImage}
+                            priority
+                        />
+                    </div>
                     <h1 className={`${styles.title} fade-in`}>
                         {SITE_CONFIG.author.name}
                     </h1>
